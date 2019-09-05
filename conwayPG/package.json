@@ -1,0 +1,16 @@
+{
+  "name": "conwayPG",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "prestart": "psql conway -f migrations/down; psql conway -f migrations/up",
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "Lucas Nagle",
+  "license": "ISC",
+  "dependencies": {
+    "log-update": "^3.2.0",
+    "pg": "^7.12.1"
+  }
+}

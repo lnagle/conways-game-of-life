@@ -1,0 +1,19 @@
+{
+    "name": "game-of-life",
+    "version": "1.0.0",
+    "main": "dist/index.js",
+    "scripts": {
+        "prestart": "tsc",
+        "start": "node dist/index.js"
+    },
+    "author": "Lucas Nagle",
+    "license": "ISC",
+    "devDependencies": {
+        "@types/lodash": "^4.14.137",
+        "@types/node": "^12.7.2"
+    },
+    "dependencies": {
+        "lodash": "^4.17.15",
+        "log-update": "^3.2.0"
+    }
+}

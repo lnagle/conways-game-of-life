@@ -1,0 +1,24 @@
+CREATE TABLE cell (
+  id SERIAL PRIMARY KEY,
+  x integer NOT NULL,
+  y integer NOT NULL,
+  is_alive bool NOT NULL
+);
+
+CREATE INDEX ON cell (x);
+CREATE INDEX ON cell (y);
+
+WITH  
+  x_range(n) AS (
+      SELECT * FROM generate_series(1,125)
+  ),
+  y_range(o) AS (
+      SELECT * FROM generate_series(1,40)
+) INSERT INTO cell(x, y, is_alive) SELECT x.*, y.*, false
+  FROM x_range as x, y_range as y;
+  
+UPDATE cell SET is_alive = true WHERE x = 51 AND y = 20;
+UPDATE cell SET is_alive = true WHERE x = 52 AND y = 20;
+UPDATE cell SET is_alive = true WHERE x = 50 AND y = 21;
+UPDATE cell SET is_alive = true WHERE x = 51 AND y = 21;
+UPDATE cell SET is_alive = true WHERE x = 51 AND y = 22;
